@@ -1,0 +1,30 @@
+<div class="header-post">
+    <div class="row">
+        <div class="col-md-7 col-lg-5 col-9" style="margin: auto">
+            <div class="icon icon-primary" [routerLink]="['/article']">
+               <i class="nc-icon nc-minimal-left"></i> Back to Geekydea
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+        <br>
+        <div class="col-md-7 col-lg-5 col-9 inside" style="margin:auto">
+            <h2>{{ post.title }}</h2>
+            <br>
+            <h5 class="inside">by : {{ post.author }} | {{ post.pubDate | amLocale:'en' | amDateFormat:'MMMM Do YYYY, h:mm:ss a' }}</h5>
+            <hr>
+            <br>
+            <div class="col-12">
+                <div class="inside" [innerHTML]="post.content"></div>
+            </div>
+            <hr>
+            <div class="tim-title">
+                <h3>Categories</h3>
+            </div>
+            <span class="label label-primary" *ngFor="let category of post.categories">{{ category }}</span> 
+            <br><br>
+            <hr>
+        </div>
+    </div>
+</div>

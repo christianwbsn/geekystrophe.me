@@ -1,0 +1,48 @@
+<div class="page-header" data-parallax="true" style="background-image: url('../assets/img/profile-bg.jpeg');">
+    <div class="filter"></div>
+    <div class="container">
+        <div class="motto text-center">
+            <div class="angular-logo">
+                <img src="assets/img/geekystrophe-logo.png" alt="">
+            </div>
+            <h1 class="presentation-title" style="font-family:'Gardenfreude'"> Geekydea</h1>
+            <br/>
+            <h2 class="presentation-subtitle text-center line-1 anim-typewriter"> Random thoughts and ideas (not) worth sharing</h2>
+            <br/>
+        </div>
+    </div>
+</div>
+<div class="main">
+    <div class="section">
+        <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+        <!--PEN CODE-->
+        <div class="row">
+            <div class="form-group col-5" style="margin:auto">
+                <input type="searchbox" class="form-control" placeholder="Search article here.." [(ngModel)]="term">
+            </div>
+        </div>
+        <br><br>
+        <div class="card-deck" style="margin:auto">
+            <div class="blog-card col-md-8 col-lg-8 col-sm-10 col-10" [routerLink]="['/article', post.id]" *ngFor="let post of posts | paginate: { itemsPerPage: 9, currentPage: page } | filter:term | orderBy: order : true">
+                <img [src]="post.thumbnail" class="photo">
+                <ul class="details">
+                    <li class="author"><a>{{ post.author }}</a></li>
+                    <li class="date">{{ post.pubDate | amParse:'YYYY-MM-DD' | amDateFormat:'LL' }} </li>
+                    <li class="tags" *ngFor="let tag of post.categories; let i=index">
+                        <ul *ngIf="i<3">
+                            <li><a>{{ tag }}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="description">
+                    <h1><strong>{{ post.title }}</strong></h1>
+                    <p class="summary">
+                        {{ post.description }}
+                    </p>
+                    <a [routerLink]="['/article', post.id]">Read More</a>
+                </div>
+            </div>
+        </div>
+        <pagination-controls (pageChange)="page = $event" class="text-center"></pagination-controls>
+    </div>
+</div>
