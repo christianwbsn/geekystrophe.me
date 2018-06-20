@@ -15,11 +15,21 @@ export class PostComponent implements OnInit {
     public loading = true
     posts=[];
     post={};
+    shareDescription = "Read this well-written article. Hope you enjoy it"
 
     constructor(
         private route: ActivatedRoute,
         private p: PostService,
     ) { 
+        function strip_html_tags(str)
+        {
+           if ((str===null) || (str===''))
+               return false;
+          else
+               str = str.toString();
+          return str.replace(/<[^>]*>/g, '');
+        }
+
         this.route.params.forEach((params: Params) => {
             let id = +params['id'];
             //Post
@@ -29,8 +39,11 @@ export class PostComponent implements OnInit {
                     this.loading = false;
                     this.posts = r.items;
                     this.posts.forEach(post => {
+                        let myString = strip_html_tags(post.description)
+                        let averageWPM = 265
                         let seo_route = post.title.replace(/[\W_]+/g, "-").toLowerCase() + '-'
                         post['id'] = seo_route + post.guid.replace("https://medium.com/p/","")
+                        post['est_reading_time'] = Math.ceil(myString.split(" ").length / averageWPM)
                     })
                     this.post = this.posts.find(function(element) {
                         return element.id == post_id

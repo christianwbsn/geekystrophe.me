@@ -21,21 +21,29 @@
                 <input type="searchbox" class="form-control" placeholder="Search article here.." [(ngModel)]="term">
             </div>
         </div>
-        <br><br>
+        <br>
+        <br>
         <div class="card-deck" style="margin:auto">
-            <div class="blog-card col-md-8 col-lg-8 col-sm-10 col-10" [routerLink]="['/article', post.id]" *ngFor="let post of posts | paginate: { itemsPerPage: 9, currentPage: page } | filter:term | orderBy: order : true">
+            <div class="blog-card col-md-8 col-lg-8 col-sm-10 col-10" *ngFor="let post of posts | paginate: { itemsPerPage: 9, currentPage: page } | filter:term | orderBy: order : true">
                 <img [src]="post.thumbnail" class="photo">
                 <ul class="details">
-                    <li class="author"><a>{{ post.author }}</a></li>
+                    <li class="author">
+                        <a>{{ post.author }}</a>
+                    </li>
                     <li class="date">{{ post.pubDate | amParse:'YYYY-MM-DD' | amDateFormat:'LL' }} </li>
                     <li class="tags" *ngFor="let tag of post.categories; let i=index">
                         <ul *ngIf="i<3">
-                            <li><a>{{ tag }}</a></li>
+                            <li>
+                                <a>{{ tag }}</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
-                <div class="description">
-                    <h1><strong>{{ post.title }}</strong></h1>
+                <div class="description" [routerLink]="['/article', post.id]">
+                    <h1>
+                        <strong>{{ post.title }}</strong>
+                    </h1>
+                    <small>{{ post.pubDate | amParse:'YYYY-MM-DD' | amDateFormat:'LL' }} - {{ post.est_reading_time }} min read</small>
                     <p class="summary">
                         {{ post.description }}
                     </p>

@@ -22,6 +22,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { OrderModule } from 'ngx-order-pipe';
 import { PostComponent } from './post/post.component';
 import { LoadingModule } from 'ngx-loading';
+import { ShareButtonsModule } from 'ngx-sharebuttons';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { LoadingModule } from 'ngx-loading';
     MomentModule,
     Ng2SearchPipeModule,
     OrderModule,
-    LoadingModule
+    LoadingModule,
+    ShareButtonsModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

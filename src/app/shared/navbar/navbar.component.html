@@ -2,7 +2,8 @@
     <div class="container">
         <div class="navbar-translate">
             <a class="navbar-brand" href="http://localhost:4200">Geekystrophe</a>
-            <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+            <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02"
+                aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
                 <span class="navbar-toggler-bar"></span>
                 <span class="navbar-toggler-bar"></span>
                 <span class="navbar-toggler-bar"></span>
@@ -17,34 +18,40 @@
                     </a>
                 </li> -->
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                        <a class="nav-link" rel="tooltip" title="Find me on Linkedin" data-placement="bottom" href="https://www.linkedin.com/in/christian-wibisono-9b3579137/" target="_blank">
-                            <i class="fa fa-linkedin"></i>
-                            <p class="d-lg-none">LinkedIn</p>
-                        </a>
-                    </li>
+                    <a class="nav-link" rel="tooltip" title="Find me on Linkedin" data-placement="bottom" href="https://www.linkedin.com/in/christian-wibisono-9b3579137/"
+                        target="_blank">
+                        <i class="fa fa-linkedin"></i>
+                        <p class="d-lg-none">LinkedIn</p>
+                    </a>
+                </li>
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                    <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="https://github.com/christianwbsn" target="_blank">
+                    <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="https://github.com/christianwbsn"
+                        target="_blank">
                         <i class="fa fa-github"></i>
                         <p class="d-lg-none">GitHub</p>
                     </a>
                 </li>
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                        <a class="nav-link" rel="tooltip" title="Reach me via email" data-placement="bottom" href="mailto:christian.wibisono7@gmail.com" target="_blank">
-                            <i class="fa fa-google-plus"></i>
-                            <p class="d-lg-none">Email</p>
-                        </a>
+                    <a class="nav-link" rel="tooltip" title="Reach me via email" data-placement="bottom" href="mailto:christian.wibisono7@gmail.com"
+                        target="_blank">
+                        <i class="fa fa-google-plus"></i>
+                        <p class="d-lg-none">Email</p>
+                    </a>
                 </li>
                 <li class="nav-item" *ngIf="!isDocumentation()">
-                    <a class="nav-link" rel="tooltip" title="Follow me on Twitter" data-placement="bottom" href="https://twitter.com/Christian_Wbsn" target="_blank">
+                    <a class="nav-link" rel="tooltip" title="Follow me on Twitter" data-placement="bottom" href="https://twitter.com/Christian_Wbsn"
+                        target="_blank">
                         <i class="fa fa-twitter"></i>
                         <p class="d-lg-none">Twitter</p>
                     </a>
                 </li>
                 <li class="nav-item" *ngIf="!isHome()">
-                    <a [routerLink]="['/article']" *ngIf="!isDocumentation()" class="nav-link"><i class="nc-icon nc-glasses-2"></i>Geekydea</a>
-                <li class="nav-item" *ngIf="!isHome()">
-                    <a [routerLink]="['/profile']" *ngIf="!isDocumentation()" class="nav-link"><i class="nc-icon nc-single-02"></i>About me</a>
-                </li>
+                    <a [routerLink]="['/article']" *ngIf="!isDocumentation()" class="nav-link">
+                        <i class="nc-icon nc-glasses-2"></i>Geekydea</a>
+                    <li class="nav-item" *ngIf="!isHome()">
+                        <a [routerLink]="['/profile']" *ngIf="!isDocumentation()" class="nav-link">
+                            <i class="nc-icon nc-single-02"></i>About me</a>
+                    </li>
             </ul>
         </div>
     </div>

@@ -14,6 +14,7 @@ export class ArticleComponent implements OnInit {
   public loading = true;
   posts = [];
   order ='pubDate';
+  header = '';
   page: number = 1;
 
   constructor(private p: PostService, 
@@ -31,9 +32,11 @@ export class ArticleComponent implements OnInit {
           result => {
               this.loading = false
               this.posts = result.items
+              this.header = result.feed.description;
               this.posts.forEach(post => {
                   let myString = strip_html_tags(post.description)
-                  let maxLength = 160
+                  let maxLength = 150
+                  let averageWPM = 265
                   
                   let trimmedString = myString.substr(0, maxLength)
                   trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
@@ -41,6 +44,8 @@ export class ArticleComponent implements OnInit {
 
                   let seo_route = post.title.replace(/[\W_]+/g, "-").toLowerCase() + '-'
                   post['id'] = seo_route + post.guid.replace("https://medium.com/p/","")
+                  post['est_reading_time'] = Math.ceil(myString.split(" ").length / averageWPM)
+                  console.log(post.est_reading_time)
                   this.ref.detectChanges() 
               })
           },

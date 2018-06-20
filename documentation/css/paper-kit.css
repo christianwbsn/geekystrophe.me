@@ -5006,7 +5006,7 @@ textarea.form-control {
   }
 
   .navbar-translate {
-    width: 100%;
+    width: 80%;
     position: relative;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
