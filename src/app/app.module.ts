@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { ArticleComponent } from './article/article.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ProjectComponent } from './project/project.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -32,7 +33,8 @@ import { ShareButtonsModule } from 'ngx-sharebuttons';
     ProfileComponent,
     NavbarComponent,
     FooterComponent,
-    PostComponent
+    PostComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,

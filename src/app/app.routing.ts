@@ -9,12 +9,13 @@ import { SignupComponent } from './signup/signup.component';
 import { ArticleComponent } from './article/article.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 import { PostComponent } from './post/post.component';
+import { ProjectComponent } from './project/project.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home',             component: HomeComponent },
     { path: 'profile',     component: ProfileComponent },
-    // { path: 'project',           component: ProjectComponent },
+    { path: 'project/:name',    component: ProjectComponent },
     { path: 'article',          component: ArticleComponent },
     { path: 'article/:id',      component: PostComponent },
 ];

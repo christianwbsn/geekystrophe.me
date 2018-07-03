@@ -17,27 +17,9 @@ export class HomeComponent implements OnInit {
         middle: false,
         right: false
     };
+    
     constructor(private loginService : LoginService, private router : Router) { 
-        this.user = new User();
     }
-
-    ngOnInit() {}
-    validateLogin() {
-        console.log(this.user.username + " " + this.user.password)
-        if(this.user.username && this.user.password) {
-            this.loginService.validateLogin(this.user).subscribe(result => {
-            console.log('result is ', result);
-            if(result['status'] === 'success') {
-              this.router.navigate(['']);
-            } else {
-              alert('Wrong username password');
-            }
-             
-          }, error => {
-            console.log('error is ', error);
-          });
-        } else {
-            alert('enter user name and password');
-        }
-      }
+    ngOnInit() {
+    }
 }

@@ -75,6 +75,11 @@ pk2-angular
 │   │   │   ├── article.component.scss
 │   │   │   ├── article.component.spec.ts
 │   │   │   └── article.component.ts
+│   │   ├── post
+│   │   │   ├── post.component.html
+│   │   │   ├── post.component.scss
+│   │   │   ├── post.component.spec.ts
+│   │   │   └── post.component.ts
 │   │   ├── profile
 │   │   │   ├── profile.component.html
 │   │   │   ├── profile.component.scss

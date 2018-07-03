@@ -21,17 +21,29 @@
                         <a href="https://en.wikipedia.org/wiki/T-shaped_skills">T-Shaped</a>
                         INTP who loves to learn new things and create solutions. Interested in technology, especially in machine learning and data
                         analytics. Hard worker with a strong analytical skill. I believe that big things happen when we do
-                        little things right. Aspire to be data scientist / machine learning engineer.
+                        little things right.
                     </p>
-                    <a href="https://docs.google.com/document/d/1v3SGydIRSNZwe18MS-r2_rOCErGjisFbe0CnDMdiPQw/edit?usp=sharing" style="text-align:right">Resume</a>
-                    <br />
+                    <br>
+                    <a class="btn btn-outline-primary btn-round" href="https://docs.google.com/document/d/1v3SGydIRSNZwe18MS-r2_rOCErGjisFbe0CnDMdiPQw/edit?usp=sharing">
+                        <i class="fa fa-clipboard"></i> Resume</a>
+                    <a class="btn btn-outline-primary btn-just-icon" href="https://www.linkedin.com/in/christian-wibisono-9b3579137/">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                    <a class="btn btn-outline-primary btn-just-icon" href="https://www.github.com/christianwbsn">
+                        <i class="fa fa-github"></i>
+                    </a>
+                    <br>
+                    <br>
                 </div>
             </div>
             <br/>
             <div class="nav-tabs-navigation col-md-10 col-lg-10 col-sm-10" style="margin:auto">
                 <div class="nav-tabs-wrapper">
-                    <ngb-tabset [justify]="'center'">
-                        <ngb-tab title="Education">
+                    <ngb-tabset [justify]="'center'" class="nav justify-content-center tab-space">
+                        <ngb-tab>
+                            <ng-template ngbTabTitle>
+                                <i class="fa fa-graduation-cap"></i> Education
+                            </ng-template>
                             <ng-template ngbTabContent>
                                 <table class="table table-striped">
                                     <thead>
@@ -65,11 +77,14 @@
                                 </table>
                             </ng-template>
                         </ngb-tab>
-                        <ngb-tab title="Skills">
+                        <ngb-tab>
+                            <ng-template ngbTabTitle>
+                                <i class="fa fa-laptop"></i> Skills
+                            </ng-template>
                             <ng-template ngbTabContent>
                                 <ul class="list-group list-group-flush">
                                     <ul class="list-group-item">
-                                        <div class="d-flex w-100 justify-content-between">
+                                        <div class="w-100 justify-content-between">
                                             <h5 class="mb-1" id="skill">
                                                 <strong> Web Development </strong>
                                             </h5>
@@ -96,7 +111,10 @@
                                 </ul>
                             </ng-template>
                         </ngb-tab>
-                        <ngb-tab title="Experiences">
+                        <ngb-tab>
+                            <ng-template ngbTabTitle>
+                                <i class="fa fa-briefcase"></i> Experiences
+                            </ng-template>
                             <ng-template ngbTabContent>
                                 <div class="list-group list-group-flush">
                                     <div class="list-group-item list-group-item-action flex-column align-items-start">
@@ -133,7 +151,10 @@
                                 </div>
                             </ng-template>
                         </ngb-tab>
-                        <ngb-tab title="Organizations">
+                        <ngb-tab>
+                            <ng-template ngbTabTitle>
+                                <i class="fa fa-sitemap"></i> Organizations
+                            </ng-template>
                             <ng-template ngbTabContent>
                                 <div class="card-deck">
                                     <div class="card">
@@ -159,7 +180,10 @@
                                 </div>
                             </ng-template>
                         </ngb-tab>
-                        <ngb-tab title="Honors">
+                        <ngb-tab>
+                            <ng-template ngbTabTitle>
+                                <i class="fa fa-star"></i> Honors
+                            </ng-template>
                             <ng-template ngbTabContent>
                                 <img src="assets/img/CSLeaders_Logo.png" class="img-no-padding img-responsive" alt="CSL Logo">
                                 <h3>Awardee of CS Leaders Scholarship</h3>
@@ -170,7 +194,10 @@
                                 <a href="https://www.csleaders.org">More about CS Leaders</a>
                             </ng-template>
                         </ngb-tab>
-                        <ngb-tab title="Awards">
+                        <ngb-tab>
+                            <ng-template ngbTabTitle>
+                                <i class="fa fa-trophy"></i> Awards
+                            </ng-template>
                             <ng-template ngbTabContent>
                                 <div class="col-lg-9 col-md-12 col-sm-12 mr-auto ml-auto">
                                     <div class="card page-carousel">
@@ -257,6 +284,26 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-images section-login" style="background-image: url('assets/img/bg11.jpg');">
+        <h1 class="tim-title text-center" style="font-family:'Gardenfreude'"> Geekiphany</h1>
+        <div class="container">
+            <div class="row example-page">
+                <div class="col-md-6 text-center" style="margin:auto">
+                    <a [routerLink]="['/project','world-cup-2018']">
+                        <img src="../../assets/img/world-cup-2018.jpg" alt="Rounded Image" class="img-rounded img-responsive" style="width: 100%;height: auto;">
+                        <a [routerLink]="['/project','world-cup-2018']" class="btn btn-outline-neutral btn-round">World Cup 2018 Predictor</a>
+                    </a>
+                </div>
+
+                <!-- <div class="col-md-6 text-center">
+                    <a>
+                        <img src="../../assets/img/sentiment-analysis.png" alt="Rounded Image" class="img-rounded img-responsive" style="width: 100%;height: auto;">
+                        <a [routerLink]="['/project/prosentilyzer']" class="btn btn-outline-neutral btn-round" disabled>Prosentilyzer</a>
+                    </a>
+                </div> -->
             </div>
         </div>
     </div>
