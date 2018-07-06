@@ -1,4 +1,3 @@
-import { LoginService } from './login.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -20,6 +19,6 @@ import { ComponentsModule } from '../components/components.module';
     ],
     declarations: [ HomeComponent ],
     exports:[ HomeComponent ],
-    providers: [ LoginService ]
+    providers: [ ]
 })
 export class HomeModule { }

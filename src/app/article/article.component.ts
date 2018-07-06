@@ -7,6 +7,7 @@ import {
 import {
     PostService
 } from '../post.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-article',
@@ -19,13 +20,14 @@ import {
 export class ArticleComponent implements OnInit {
 
     public loading = true;
-    posts = [];
+    posts :Article[] = [];
     order = 'pubDate';
     header = '';
+    term =''
     page: number = 1;
 
     constructor(private p: PostService,
-        private ref: ChangeDetectorRef) {
+        private ref: ChangeDetectorRef, private router : Router) {
         function strip_html_tags(str) {
             if ((str === null) || (str === ''))
                 return false;
@@ -73,4 +75,17 @@ export class ArticleComponent implements OnInit {
         this.isFoundArticle();
     }
 
+}
+export interface Article {
+    title:string;
+    author:string;
+    pubDate:string;
+    link:string;
+    guid:string;
+    thumbnail:string;
+    description:string;
+    content:string;
+    enclosure:string;
+    categories:string[];
+    est_reading_time:number;
 }

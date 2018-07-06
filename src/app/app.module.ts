@@ -7,34 +7,23 @@ import { AppRoutingModule } from './app.routing';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { SignupComponent } from './signup/signup.component';
-import { ArticleComponent } from './article/article.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProjectComponent } from './project/project.component';
-import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http'; 
 
 import { HomeModule } from './home/home.module';
-import { NgxPaginationModule } from 'ngx-pagination';
-import { MomentModule } from 'angular2-moment';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { OrderModule } from 'ngx-order-pipe';
-import { PostComponent } from './post/post.component';
-import { LoadingModule } from 'ngx-loading';
-import { ShareButtonsModule } from 'ngx-sharebuttons';
+import { ArticleModule } from './article/article.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
-    ArticleComponent,
     ProfileComponent,
     NavbarComponent,
     FooterComponent,
-    PostComponent,
-    ProjectComponent
+    ProjectComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,13 +33,9 @@ import { ShareButtonsModule } from 'ngx-sharebuttons';
     AppRoutingModule,
     HttpClientModule,
     HomeModule,
+    ArticleModule,
     HttpModule,
-    NgxPaginationModule,
-    MomentModule,
-    Ng2SearchPipeModule,
-    OrderModule,
-    LoadingModule,
-    ShareButtonsModule.forRoot(),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

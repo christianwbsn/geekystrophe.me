@@ -1,5 +1,5 @@
-<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
 <div class="page-header" data-parallax="true" style="background-image: url('../assets/img/geekydea.png');">
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
     <div class="filter"></div>
     <div class="container">
         <div class="motto text-center">
@@ -27,7 +27,7 @@
         <h4 class="text-center" *ngIf="!isFoundArticle()">No articles found</h4>
         <br>
         <div class="card-deck" style="margin:auto">
-            <div class="blog-card col-md-8 col-lg-8 col-sm-10 col-10" *ngFor="let post of posts | paginate: { itemsPerPage: 9, currentPage: page } | filter:term | orderBy: order : true">
+            <div class="blog-card col-md-6 col-lg-6 col-sm-9 col-9" *ngFor="let post of posts | paginate: { itemsPerPage: 9, currentPage: page } | filter:term | orderBy: order : true">
                 <img [src]="post.thumbnail" class="photo">
                 <ul class="details">
                     <li class="author">

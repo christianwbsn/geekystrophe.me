@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { PostService } from '../post.service';
+import { PostService } from '../../post.service';
 
 
 @Component({
@@ -13,8 +13,8 @@ import { PostService } from '../post.service';
 export class PostComponent implements OnInit {
 
     public loading = true
-    posts=[];
-    post={};
+    posts: Post[] =[];
+    post : Post
     shareDescription = "Read this well-written article. Hope you enjoy it"
 
     constructor(
@@ -63,7 +63,16 @@ export class PostComponent implements OnInit {
 }
 
 export interface Post {
-    id: number;
-    title: string;
-    body: string;
+    id:string;
+    title:string;
+    author:string;
+    pubDate:string;
+    link:string;
+    guid:string;
+    thumbnail:string;
+    description:string;
+    content:string;
+    enclosure:string;
+    categories:string[];
+    est_reading_time:number;
 }
