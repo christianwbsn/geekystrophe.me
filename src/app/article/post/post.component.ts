@@ -14,7 +14,7 @@ export class PostComponent implements OnInit {
 
     public loading = true
     posts: Post[] =[];
-    post : Post
+    post : Post;
     shareDescription = "Read this well-written article. Hope you enjoy it"
 
     constructor(
@@ -58,7 +58,6 @@ export class PostComponent implements OnInit {
     }
 
     ngOnInit() {
-
     }
 }
 

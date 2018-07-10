@@ -37,7 +37,8 @@ import { PostComponent } from './post/post.component';
          ArticleComponent,
          PostComponent 
     ],
-    exports:[ ArticleComponent ],
+    exports:[ ArticleComponent,
+    PostComponent ],
     providers: []
 })
 export class ArticleModule { }

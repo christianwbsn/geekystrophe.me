@@ -151,3 +151,11 @@ We hide :before pseudo-element on :active
   -o-transition-delay: 0s;
   transition-delay: 0s;
 }
+@media screen and (max-width: 600px) {
+	.angular-logo {
+		max-width: 150px;
+  }
+  h1 .presentation-title {
+    size: 11px;
+  }
+}

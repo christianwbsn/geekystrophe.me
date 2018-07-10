@@ -8,7 +8,7 @@
                     <div class="angular-logo">
                         <img src="assets/img/geekystrophe_logo_1.png" alt="">
                     </div>
-                    <h1 class="presentation-title" style="font-family:'Gardenfreude'"> Geekydea</h1>
+                    <h1 class="presentation-title" style="font-family:'Gardenfreude'"> Geekidea</h1>
                     <h2 class="presentation-subtitle revealing">Ideas</h2>
                     <h2 class="presentation-subtitle revealing">
                         <span>and random thoughts
@@ -21,15 +21,11 @@
     </div>
     <div class="main">
         <div class="section">
-            <div class="row">
-                <div class="form-group col-5" style="margin:auto">
-                    <input type="searchbox" class="form-control" placeholder="Search article here.." [(ngModel)]="term">
-                </div>
-            </div>
+            <input type="searchbox" class="form-control col-5" placeholder="Search article here.." [(ngModel)]="term" style="margin: auto">
             <br>
             <h4 class="text-center" *ngIf="!isFoundArticle()">No articles found</h4>
             <br>
-            <div class="card-deck col-9" style="margin:auto">
+            <div class="card-deck col-10" style="margin:auto">
                 <div class="blog-card" *ngFor="let post of posts | paginate: { itemsPerPage: 9, currentPage: page } | filter:term | orderBy: order : true">
                     <img [src]="post.thumbnail" class="photo">
                     <ul class="details">
@@ -57,7 +53,7 @@
                     </div>
                 </div>
             </div>
-            <pagination-controls (pageChange)="page = $event" class="text-center"></pagination-controls>
+            <pagination-controls (pageChange)="page = $event" class="text-center" style="margin: auto"></pagination-controls>
         </div>
     </div>
 </div>

@@ -200,6 +200,9 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+	.angular-logo {
+		max-width: 140px;
+	}
 	.revealing {
 		display: inline-block;
 		overflow: hidden;
