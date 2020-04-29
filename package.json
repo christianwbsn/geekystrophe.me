@@ -28,7 +28,7 @@
     "bootstrap": "4.0.0-beta",
     "core-js": "^2.4.1",
     "express": "^4.16.3",
-    "jquery": "3.2.1",
+    "jquery": "3.5.0",
     "jw-bootstrap-switch-ng2": "1.0.3",
     "medium-posts": "^1.0.0",
     "mongodb": "^3.0.8",
