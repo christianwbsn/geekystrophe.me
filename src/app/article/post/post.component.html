@@ -1,37 +1,40 @@
 <div class="header-post">
     <div class="row">
-        <div class="col-md-7 col-lg-5 col-9" style="margin: auto">
-            <div class="icon icon-primary" [routerLink]="['/article']">
-                <i class="nc-icon nc-minimal-left"></i> Back to Geekydea
+        <div class="col-md-10 col-lg-8 col-xl-6 col-sm-10" style="margin: auto">
+            <div class="icon icon-primary back" [routerLink]="['/article']">
+                <i class="nc-icon nc-minimal-left"></i> Back to Journal
             </div>
         </div>
     </div>
     <div class="row">
         <div class="icon-bar">
-            <button class="twitter btn" shareButton="twitter" [sbUrl]="post.link" [sbTags]="post.categories" [sbDescription]="shareDescription">
+            <button class="twitter btn" shareButton="twitter" [sbUrl]="post.link" [sbTags]="post.categories"
+                [sbDescription]="shareDescription">
                 <i class="fa fa-twitter"></i>
             </button>
-            <button class="facebook btn" shareButton="facebook" [sbUrl]="post.link" [sbTags]="post.categories" [sbDescription]="shareDescription">
+            <button class="facebook btn" shareButton="facebook" [sbUrl]="post.link" [sbTags]="post.categories"
+                [sbDescription]="shareDescription">
                 <i class="fa fa-facebook"></i>
             </button>
-            <button class="linkedin btn" shareButton="linkedin" [sbUrl]="post.link" [sbTags]="post.categories" [sbDescription]="shareDescription">
+            <button class="linkedin btn" shareButton="linkedin" [sbUrl]="post.link" [sbTags]="post.categories"
+                [sbDescription]="shareDescription">
                 <i class="fa fa-linkedin"></i>
             </button>
         </div>
         <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
         <br>
-        <div class="col-md-7 col-lg-5 col-sm-10 col-10 inside" style="margin:auto">
-            <h2>{{ post.title }}
+        <div class="col-md-10 col-xl-6 col-lg-8 col-sm-10 col-xs-10 inside" style="margin:auto">
+            <h2 class="inside">{{ post.title }}
                 <br>
                 <small>by : {{ post.author }}</small>
             </h2>
             <br>
-            <h5 class="inside">{{ post.pubDate | amLocale:'en' | amDateFormat:'MMMM Do YYYY, h:mm:ss a' }} - {{post.est_reading_time}} mins
-                read
+            <h5 class="inside" style="margin-left:10%">{{ post.pubDate | amLocale:'en' | amDateFormat:'MMMM Do YYYY, h:mm:ss a' }} -
+                {{post.est_reading_time}} mins read
             </h5>
-            <hr>
+            <hr class="inside">
             <br>
-            <div class="col-12">
+            <div class="col-10">
                 <div class="inside" [innerHTML]="post.content"></div>
             </div>
             <hr>
@@ -42,6 +45,27 @@
             <br>
             <br>
             <hr>
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                /*
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                */
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document,
+                        s = d.createElement('script');
+                    s.src = 'https://christianwbsn-github-io.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
         </div>
     </div>
 </div>

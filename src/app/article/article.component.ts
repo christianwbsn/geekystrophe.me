@@ -24,6 +24,7 @@ export class ArticleComponent implements OnInit {
     order = 'pubDate';
     header = '';
     term =''
+    subtitle=''
     page: number = 1;
 
     constructor(private p: PostService,
@@ -36,15 +37,29 @@ export class ArticleComponent implements OnInit {
             return str.replace(/<[^>]*>/g, '');
         }
 
+        function remove_img(str) {
+            let div = document.createElement('div');
+            div.innerHTML = str
+            let elements = div.getElementsByTagName('img')
+            while (elements[0]) {
+                elements[0].parentNode.removeChild(elements[0])
+            }
+            return div.innerHTML
+        }
+
         this.p.getAll().subscribe(
             result => {
                 this.loading = false
                 this.posts = result.items
                 this.header = result.feed.description;
                 this.posts.forEach(post => {
-                    let myString = strip_html_tags(post.description)
-                    let maxLength = 150
-                    let averageWPM = 265
+                    post['subtitle'] = strip_html_tags(post.description.slice(0, post.description.indexOf('</h4>')))
+                    if (post.subtitle.length > 100) {
+                        post.subtitle = ""
+                    }
+                    let myString = remove_img(post.description.slice(post.description.indexOf('</h4>') + 5))
+                    let maxLength = 1000
+                    let averageWPM = 225
 
                     let trimmedString = myString.substr(0, maxLength)
                     trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
@@ -53,7 +68,6 @@ export class ArticleComponent implements OnInit {
                     let seo_route = post.title.replace(/[\W_]+/g, "-").toLowerCase() + '-'
                     post['id'] = seo_route + post.guid.replace("https://medium.com/p/", "")
                     post['est_reading_time'] = Math.ceil(myString.split(" ").length / averageWPM)
-                    console.log(post.est_reading_time)
                     this.ref.detectChanges()
                 })
             },
@@ -83,6 +97,7 @@ export interface Article {
     link:string;
     guid:string;
     thumbnail:string;
+    subtitle:string;
     description:string;
     content:string;
     enclosure:string;

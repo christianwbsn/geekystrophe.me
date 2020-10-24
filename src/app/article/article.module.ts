@@ -35,7 +35,7 @@ import { PostComponent } from './post/post.component';
     ],
     declarations: [
          ArticleComponent,
-         PostComponent 
+         PostComponent
     ],
     exports:[ ArticleComponent,
     PostComponent ],

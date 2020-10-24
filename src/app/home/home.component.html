@@ -1,62 +1,24 @@
 <div class="wrapper">
-    <div class="page-header section-dark" style="background-image: url('assets/img/geekystrophe-home-bg.jpg')">
-        <div class="filter"></div>
-        <div class="content-center">
-            <div class="container">
-                <div class="title-brand">
-                    <div class="angular-logo">
-                        <img src="assets/img/geekystrophe-logo.png" alt="">
-                    </div>
-                    <div class="row">
-                        <h1 class="presentation-title"> &lt;&nbsp;</h1>
-                        <h1 class="presentation-title" style="font-family:'Gardenfreude'"> Geekystrophe</h1>
-                        <h1 class="presentation-title"> &nbsp;/&gt;</h1>
-                    </div>
-                </div>
-                <br>
-                <h2 class="presentation-subtitle text-center line-1 anim-typewriter"> Let's turn geek ! </h2>
-                <br>
-                <div class="col-lg-6 col-md-6 col-sm-10 col-10" style="margin:auto">
-                    <div class="btn-group">
-                        <button type="button" class="button btn btn-default btn-round" data-hover="Articles" [routerLink]="['/article']"> <span>Geekydea</span></button>
-                        <button type="button" class="button btn btn-default btn-round" data-hover="About me" [routerLink]="['/profile']"><span>Geekiphany</span></button>
-                    </div>
-                </div>
+    <div class="page-header section-dark" style="background:black">
+        <div class="container">
+            <h2 class="presentation-subtitle" style="text-align:left"> Hi, I'm </h2>
+            <div class="row">
+                <h1 class="presentation-title" style="text-align:left"> Christian</h1>
             </div>
+            <div class="row">
+                <h1 class="presentation-title" style="text-align:left"> Wibisono</h1>
+            </div>
+            <br>
+            <h2 class="presentation-subtitle line-1 anim-typewriter"> Innovator & Data Scientist </h2>
+            <br>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-neutral btn-simple"
+                        [routerLink]="['/article']"> <span>Journal</span></button>
+                    <button type="button" class="btn btn-outline-neutral btn-simple"
+                        [routerLink]="['/profile']"><span>About Me</span></button>
+                </div>
         </div>
     </div>
     <div class="main">
-        <!-- <app-components></app-components> -->
-        <!-- <div class="section section-image section-login" style="background-image: url('assets/img/login-images.jpg');">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
-                        <div class="card card-register">
-                            <h3 class="title">Welcome to Geekystrophe !</h3>
-                            <form class="register-form">
-                                <label>Email</label>
-                                <div class="input-group form-group-no-border">
-                                    <span class="input-group-addon">
-                                        <i class="nc-icon nc-email-85"></i>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="Email" name="email" [(ngModel)] = "user.username" required autofocus>
-                                </div>
-                                <label>Password</label>
-                                <div class="input-group form-group-no-border">
-                                    <span class="input-group-addon">
-                                        <i class="nc-icon nc-key-25"></i>
-                                    </span>
-                                    <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)] = "user.password" required>
-                                </div>
-                                <button class="btn btn-primary btn-block btn-round" (click)="validateLogin();">Login</button>
-                            </form>
-                        </div>
-                        <div class="col text-center" routerLinkActive="active">
-                            <a [routerLink]="['/signup']" class="btn btn-outline-neutral btn-round btn-lg">Register</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>
 </div>

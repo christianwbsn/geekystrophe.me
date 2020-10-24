@@ -20,10 +20,10 @@ body {
   position: relative;
   top: 90%;
   width: 24em;
-  margin: 0 auto;
+  margin: 2px;
   border-right: 2px solid rgba(255, 255, 255, .75);
   font-size: 180%;
-  text-align: center;
+  text-align: left;
   white-space: nowrap;
   overflow: hidden;
   transform: translateY(-50%);
@@ -40,7 +40,7 @@ body {
     width: 0;
   }
   to {
-    width: 8em;
+    width: 13em;
   }
 }
 
@@ -75,7 +75,7 @@ body {
   top: 0.67em;
   left: 0;
   width: 100%;
-  text-align: center;
+  text-align: left;
   opacity: 0;
   -webkit-transition: .4s,opacity .6s;
   -moz-transition: .4s,opacity .6s;
@@ -152,10 +152,8 @@ We hide :before pseudo-element on :active
   transition-delay: 0s;
 }
 @media screen and (max-width: 600px) {
-	.angular-logo {
-		max-width: 150px;
-  }
   h1 .presentation-title {
-    size: 11px;
+    size: 24px;
+    margin: 0 7px
   }
 }

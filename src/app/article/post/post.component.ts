@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { PostService } from '../../post.service';
+import { ConditionalExpr } from '@angular/compiler';
 
 
 @Component({
@@ -30,6 +31,14 @@ export class PostComponent implements OnInit {
           return str.replace(/<[^>]*>/g, '');
         }
 
+        function remove_medium_img(str) {
+            let div = document.createElement('div');
+            div.innerHTML = str
+            let elements = div.getElementsByTagName('img')
+            elements[elements.length-1].parentNode.removeChild(elements[elements.length-1])
+            return div.innerHTML
+        }
+
         this.route.params.forEach((params: Params) => {
             let id = +params['id'];
             //Post
@@ -40,9 +49,10 @@ export class PostComponent implements OnInit {
                     this.posts = r.items;
                     this.posts.forEach(post => {
                         let myString = strip_html_tags(post.description)
-                        let averageWPM = 265
+                        let averageWPM = 225
                         let seo_route = post.title.replace(/[\W_]+/g, "-").toLowerCase() + '-'
                         post['id'] = seo_route + post.guid.replace("https://medium.com/p/","")
+                        post['content'] = remove_medium_img(post.content)
                         post['est_reading_time'] = Math.ceil(myString.split(" ").length / averageWPM)
                     })
                     this.post = this.posts.find(function(element) {

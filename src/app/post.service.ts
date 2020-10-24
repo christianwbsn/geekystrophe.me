@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
- 
+
 @Injectable()
 export class PostService {
 
-    endpoint = "https://medium.com/feed/@christian.wibisono7"
+    endpoint = "https://medium.com/feed/@christianwbsn"
 
 
   constructor(private http: Http) { }
@@ -18,5 +18,5 @@ export class PostService {
     // getPost(id) {
     //     return this.http.get('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURI(this.endpoint))
     //             .map(response => response.json());
-    // }      
+    // }
 }
